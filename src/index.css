@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,105 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.ce-chat-list {
+  background-color: rgb(240, 240, 240) !important;
+}
+.ce-chat-engine {
+  height: 100vh;
+}
+.ce-chats-container {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+.ce-active-chat-card {
+  background-color: #cabcdc !important;
+  border: 4px solid #cabcdc !important;
+  border-radius: 0px !important;
+}
+
+.ce-chat-subtitle-text {
+  color: #595959 !important;
+  overflow: ellipsis;
+}
+
+.ce-chat-form-container {
+  padding-bottom: 20px !important;
+  font-size: 15px;
+  color: red;
+  height: 100px;
+  vertical-align: center;
+}
+
+.ce-text-input {
+  border-radius: 6px !important;
+  border: 1px solid #3b2a50 !important;
+}
+
+.ce-primary-button {
+  border-radius: 6px !important;
+  background-color: #7554a0 !important;
+  position: relative;
+  bottom: 1px;
+}
+
+.ce-danger-button {
+  background-color: white !important;
+  border-radius: 22px !important;
+}
+
+.ce-settings {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+.ce-autocomplete-input {
+  border-radius: 6px !important;
+  border: 1px solid #3b2a50 !important;
+}
+
+.ce-autocomplete-options {
+  border-radius: 6px !important;
+  border: 1px solid #3b2a50 !important;
+  background-color: white !important;
+}
+
+.ce-chat-settings-container {
+  padding-top: 12px !important;
+}
+
+.ce-chat-avatars-row {
+  display: none !important;
+}
+
+.ce-chat-feed-column {
+  /* overflow: scroll; */
+  background-color: rgb(240, 240, 240);
+  /* display: grid;
+  grid-template-rows: repeat(6, auto); */
+}
+/* @media screen and (max-width: 639px) {
+  .ce-chats-container {
+    display: hidden !important;
+    color: yellow
+  }
+} */
+.hide {
+  display: block; 
+}
+/* #listRecherche {
+  display: block;
+} */
+.isnotActive {
+  display: none
+}
+@media screen and (min-width: 575px) {
+  .hide {
+    display:none;
+  }
 }
