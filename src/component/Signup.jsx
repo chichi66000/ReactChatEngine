@@ -26,7 +26,7 @@ const Signup = () => {
     // event.preventDefault();
 
     // formdata.append('avatar', data.avatar)
-    await axios.post('https://react-app-chatengine.herokuapp.com/user/signup', {
+    await axios.post('https://anewchatapp.herokuapp.com/user/signup', {
       userName: data.userName,
       password: data.password,
       

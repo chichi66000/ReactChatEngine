@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef, useContext} from 'react';
+import React, {useEffect, useState, useRef, useContext, useLayoutEffect} from 'react';
 import Swal from 'sweetalert2'
 import axios from 'axios';
 import NewMessageForm  from "./NewMessageForm";
@@ -87,7 +87,6 @@ const ChatFeed = (props) => {
     getMessagesOfActiveChat()
 
     return ( () => {
-      didMountRef.current = false;
       // controller.abort()
       isCancel = true
     } )
@@ -150,6 +149,7 @@ const ChatFeed = (props) => {
       </div>
     ))
   }
+
   // button toggle menu chatlist
   const handleToggle1 = async() => {
     setIsOpen(!isOpen)
@@ -182,8 +182,31 @@ const ChatFeed = (props) => {
     let opacity = " row-span-5 block row-start-2 row-end-6 sm:row-start-1 ";
     opacity += isOpen || isOpenSetting ? "hidden" : "block"
     
+    
     return opacity
   };
+
+  // useEffect pour activer scroll to bottom sur message 
+  useLayoutEffect ( () => {
+    if (chat) {
+      // add scrollToBottom to element div
+      let bottom = document.getElementById('scrollToBottom')
+        function scrollToBottom (bottom) {
+          bottom.scrollTop = bottom.scrollHeight;
+          console.log("cv ", bottom.scrollHeight);
+
+        }
+      scrollToBottom(bottom)
+    }
+      
+      // if (document.readyState === "complete") {
+        
+      //   scrollToBottom(bottom);
+      // }
+      // else { window.addEventListener ('load', scrollToBottom(bottom))}
+      
+      // scrollToBottom(bottom)
+  }) 
 
   // add new chat room
   const handleAddChat = async () => {
@@ -554,7 +577,7 @@ const ChatFeed = (props) => {
 
       {/* ChatFeed & messages */}
       <div className= {addOpacity()}>
-        <div className="h-4/5 overflow-y-auto ">
+        <div id="scrollToBottom" className="h-4/5  overflow-y-auto ">
             {/* header en haut pour le nom de room + les persons activé */}
           <div className="text-center ">
 
