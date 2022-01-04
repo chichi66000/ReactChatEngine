@@ -52,11 +52,11 @@ app.use(helmet.contentSecurityPolicy({
 const userRoute = require('./routes/users')
 app.use('/user', cors(corsOptions) ,userRoute )
 
-//point d'entrée build de react frontend
-app.use('/', express.static(__dirname + '/build'))
-app.get('*', (req, res) => { 
-  res.sendFile(path.join(__dirname + '/build', 'index.html'))
-})
+//point d'entrée build de react frontend 
+//app.use('/', express.static(__dirname + '/build'))
+//app.get('*', (req, res) => { 
+  //res.sendFile(path.join(__dirname + '/build', 'index.html'))
+//})
 
 app.listen(port, () => { console.log(`Listening on port ${port}`);})
 
