@@ -19,7 +19,6 @@ export function AuthProvider ({children}) {
   const [uid, setUid] = useState('')
   const [idChat, setIdChat] = useState('')
   const [idDocFirebase, setIdDocFirebase] = useState('')
-
   const didMountRef = useRef(false)
 
   // utiliser useEffect pour update les changements d state user

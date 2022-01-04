@@ -22,12 +22,10 @@ const NewMessageForm = (props) => {
   // handlehange pour récupérer valeur input text
   const handleChange = (event) => {
     setValue(event.target.value)
-    // isTyping(props, chatId)
   } 
 
   // handleUpload pour récupérer image
   const handleUpload = (event) => {
-    console.log(event.target.files);
     // send avec method sendMessage
     sendMessage(creds, chatId, {files: event.target.files, text: ''})
   }

@@ -16,7 +16,6 @@ const ResetPassword = () => {
     // envoyer au server de firebase 
     sendPasswordResetEmail( auth, email)
     .then ( () => {
-      console.log("Email envoyé");
       Swal({
         icon: "success",
         text: "Please check your email then reset password"
@@ -36,7 +35,6 @@ const ResetPassword = () => {
           <input type="email" id="email" required className="col-span-3 border border-2 rounded-md p-2 ml-2" value={email} onChange = { (event) => setEmail(event.target.value)} />
         </div>
        
-
         {/* button reset password pour envoyer email */}
         <div className="mx-auto text-center ">
           <button aria-label="button reset password" className="p-2 bg-purple-900 text-white rounded-2xl hover:bg-yellow-900 focus:bg-yellow-900 hover:opacity-80 focus:opacity-80 ">

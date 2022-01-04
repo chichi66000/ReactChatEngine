@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 export function NotFound ()  {
   return (<div className="mx-auto relative top-1/2 uppercase max-w-max text-center ">
     <p className="my-2 text-purple-700 font-bold  text-3xl  ">404 Not Found</p>

@@ -95,7 +95,6 @@ const ChatFeed = (props) => {
   // renderMyMessages
   const renderMyMessages = () => {
     const keys = Object.keys(messages)  // récupérer le tableau des messages
-    
     return keys.map( (key, index) => {
       // console.log("key ", key);
       const message = messages[key]     // le message à la position de key
@@ -188,24 +187,15 @@ const ChatFeed = (props) => {
 
   // useEffect pour activer scroll to bottom sur message 
   useLayoutEffect ( () => {
+    // s'il y a des messages => scroll to the end of messages
     if (chat) {
       // add scrollToBottom to element div
       let bottom = document.getElementById('scrollToBottom')
         function scrollToBottom (bottom) {
           bottom.scrollTop = bottom.scrollHeight;
-          console.log("cv ", bottom.scrollHeight);
-
         }
       scrollToBottom(bottom)
     }
-      
-      // if (document.readyState === "complete") {
-        
-      //   scrollToBottom(bottom);
-      // }
-      // else { window.addEventListener ('load', scrollToBottom(bottom))}
-      
-      // scrollToBottom(bottom)
   }) 
 
   // add new chat room
@@ -226,7 +216,6 @@ const ChatFeed = (props) => {
         }}
       )
       .then ( (res) => {
-        console.log("new chat created");
         setActiveChat(res.data.id)
       })
       .catch ( (err) => {console.log(err);})
@@ -300,7 +289,6 @@ const ChatFeed = (props) => {
         }
       })
       .then( () => {
-        console.log("active chat deleted");
         // fermer le menu
         setIsOpenSetting(!isOpenSetting)
       })
@@ -377,11 +365,8 @@ const ChatFeed = (props) => {
 
   // removeUserFromChatRoom
   const removeUserFromChatRoom = async (username) => {
-
-    console.log("username remove ", username);
     // si ce username == admin
     if (username === user.email) {
-      console.log("ou'ar admin");
       // delete chat room
       Swal.fire({
         title: 'Do you want to delete your chat room ?',

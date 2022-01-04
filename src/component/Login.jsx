@@ -77,9 +77,6 @@ const Login = () => {
         </div>
           
       </form>
-
-      
-
     </div>
     
   )

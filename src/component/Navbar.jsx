@@ -13,7 +13,6 @@ const Navbar = () => {
   // récupérer les infos du firebase
   useRequestFirebase()
 
-  
   // handleLogout
   const handleLogout = () => {
     

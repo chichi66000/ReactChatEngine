@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-// import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { userSchema } from "../validation/userSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -20,12 +19,8 @@ const Signup = () => {
     resolver: yupResolver(userSchema),
   });
 
-
   // handleSubmit Signup
   const handleSubmitSingup = async (data) => {
-    // event.preventDefault();
-
-    // formdata.append('avatar', data.avatar)
     await axios.post('https://anewchatapp.herokuapp.com/user/signup', {
       userName: data.userName,
       password: data.password,

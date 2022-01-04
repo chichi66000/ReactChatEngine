@@ -12,42 +12,38 @@ import ResetPassword from './component/ResetPassword';
 import {NotFound} from "./component/NotFound"
 import ProtectedRoute from './util/ProtectedRoute';
 
-
 function App() {
-
   return (
-    
-      <BrowserRouter>
-        <AuthProvider>
-            <Navbar />
-            <Routes>
-              <Route path="/signup" element = { <Signup /> } />
-              <Route path="/login" element = { <Login /> } />
-              <Route path="/reset-password" element = { <ResetPassword /> } />
-              <Route path="*" element= {<NotFound /> } />
+    <BrowserRouter>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/signup" element = { <Signup /> } />
+          <Route path="/login" element = { <Login /> } />
+          <Route path="/reset-password" element = { <ResetPassword /> } />
+          <Route path="*" element= {<NotFound /> } />
 
-              {/* ProtectedRoute */}
-              <Route exact path="/" element={<ProtectedRoute>
-                  <Chat />
-                </ProtectedRoute>
-              } />
-              <Route path="/update-profile" element={<ProtectedRoute>
-                  <UpdateProfile />
-                </ProtectedRoute>
-              } />
-              <Route  path="/profile" element={<ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              } />
-              <Route path="/delete-user" element={<ProtectedRoute>
-                  <DeleteUser />
-                </ProtectedRoute>
-              } />
+          {/* ProtectedRoute */}
+          <Route exact path="/" element={<ProtectedRoute>
+              <Chat />
+            </ProtectedRoute>
+          } />
+          <Route path="/update-profile" element={<ProtectedRoute>
+              <UpdateProfile />
+            </ProtectedRoute>
+          } />
+          <Route  path="/profile" element={<ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          } />
+          <Route path="/delete-user" element={<ProtectedRoute>
+              <DeleteUser />
+            </ProtectedRoute>
+          } />
 
-            </Routes>
-        </AuthProvider>
-      </BrowserRouter>
-    
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

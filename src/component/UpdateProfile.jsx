@@ -19,8 +19,6 @@ export default function UpdateProfile () {
 
   // hook pour récupérer info du user
   useRequestFirebase()
-  // console.log("idChat ", idChat);
-  // console.log("idDocFirebase ", idDocFirebase);
 
   //read file avec readURI puis enregistrer dans setPreviewAvatar pour preview avatar
   const readURI = async(e) => {

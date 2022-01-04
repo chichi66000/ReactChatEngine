@@ -62,27 +62,20 @@ const Chat = () => {
             setLoading(false)
           })
           .catch(e => {console.log("error ", e.response);})
-        
-      }
-      
+          }
     })
-    })();
+  })();
 
     // clean up
     return ( () => {
       controller.abort();
-      console.log("clean");
     })  
   }, [user])
-
 
   // hook pour récupérer les infos de user dans firestore
   
   useRequestFirebase()
     
-  
-  
-
   //si loading = true => rien affciher
   if (loading) return <div>Loading</div>
 

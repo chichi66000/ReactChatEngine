@@ -11,6 +11,7 @@ export const useRequestFirebase = () => {
   // récupérer les infos de firebase et stocker
   useEffect ( () => {
     let controller = new AbortController();
+    // si user => récupérer les infos de firestore
     if (user) {
       (async () => {
         const q = query(collection(db, "users"), where("username", "==", user.email));
@@ -34,6 +35,7 @@ export const useRequestFirebase = () => {
     })
   }, [user])
 
+  // récupérer avatar sépéramenet depuis chatEngine car src change tous les jours
   useEffect ( () => {
     let controller = new AbortController()
     if (user) {

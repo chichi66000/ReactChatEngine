@@ -26,8 +26,6 @@ export default function DeleteUser () {
     let credentials = EmailAuthProvider.credential(emailConfirm, passwordConfirm)
     await reauthenticateWithCredential( user, credentials)
     .then ( (res) => {
-      // log
-      console.log("reauthenitaced ok ");
       //set token dans localstorage
       res.user.getIdToken()
       .then (token => {
@@ -43,7 +41,6 @@ export default function DeleteUser () {
           // delete user dans firebase
           deleteUser(user)
             .then( () => {
-              console.log("user delete");
               //effacer le token
               localStorage.removeItem('token')
               // supprimer les infos dans le state
